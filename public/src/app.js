@@ -15,15 +15,18 @@ app.config(function($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('login', {
       url: "/login",
-      templateUrl: "./src/login/login_template.html"
+      templateUrl: "./src/login/login_template.html",
+      controller: "LoginController"
     })
     .state('list', {
       url: "/list",
-      templateUrl: './src/studentList/studentList_template.html'
+      templateUrl: './src/studentList/studentList_template.html',
+      controller: "StudentListController"
     })
     .state('student', {
       url: '/student/:studentId',
-      templateUrl: './src/studentPage/studentPage_template.html'
+      templateUrl: './src/studentPage/studentPage_template.html',
+      controller: "StudentPageController"
     })
 });
 
