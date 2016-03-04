@@ -4,7 +4,7 @@ Login.controller('LoginController', ['$scope', '$location', function($scope, $lo
   console.log('login controller loaded');
 
   $scope.login = function(event) {
-    $location.path('/list');
+    $location.path('/list/1');
   }
 
   $scope.change = function() {

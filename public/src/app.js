@@ -19,7 +19,7 @@ app.config(function($stateProvider, $urlRouterProvider){
       controller: "LoginController"
     })
     .state('list', {
-      url: "/list",
+      url: "/list/:pageNumber",
       templateUrl: './src/studentList/studentList_template.html',
       controller: "StudentListController"
     })
@@ -31,9 +31,10 @@ app.config(function($stateProvider, $urlRouterProvider){
 });
 
 
-var PaginationController = function($scope) {
+var PaginationController = function($scope, $location) {
   $scope.pageChangeHandler = function(num) {
     console.log('going to page ' + num);
+    $location.url('/list' + $scope.currentPage);
   };
 }
 
