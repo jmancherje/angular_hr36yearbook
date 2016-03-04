@@ -1,9 +1,26 @@
 var mongoose = require('mongoose');
 var User = require('./models/users.js');
 var Comment = require('./models/comments.js');
-var commentsSchema = require('./models/comments.js');
+var Student = require('./models/students.js');
 
 module.exports = function (app, express) {
+  app.get('/students', function(req, res) {
+    mongoose.model('Student').find(function (err, students) {
+      res.send(students);
+    });
+  });
+
+  app.post('/students', function (req, res) {
+    var student = new Student({
+      name: req.body.name,
+      img_name: req.body.img_name,
+      location: req.body.location,
+      info: req.body.info
+    });
+    student.save();
+    res.sendStatus(200);
+  });
+
   app.get('/users', function (req, res) {
     mongoose.model('User').find(function (err, users) {
       res.send(users);
@@ -29,7 +46,6 @@ module.exports = function (app, express) {
         });
       }
     });
-
   });
 
   app.get('/comments', function (req, res) {
@@ -38,8 +54,8 @@ module.exports = function (app, express) {
     });
   });
 
-  app.post('/comments', function (req, res) {
 
+  app.post('/comments', function (req, res) {
     // send comment to database using session
     console.log('post to comments: ', req.body);
     var comment = new Comment({

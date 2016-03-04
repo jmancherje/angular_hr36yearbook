@@ -1,25 +1,37 @@
 var app = angular.module('app', [
   'ngRoute',
+  'ui.router',
   'app.login',
   'app.studentList',
-  'app.studentPage'
+  'app.studentPage',
+  'angularUtils.directives.dirPagination'
 ]);
 
-app.config(['$routeProvider', function ($routeProvider) {
-  $routeProvider
-    .when('/login', {
-      templateUrl: './src/login/login_template.html',
-      controller: 'LoginController'
+
+app.config(function($stateProvider, $urlRouterProvider){
+  // default route
+  $urlRouterProvider.otherwise('/login')
+
+  $stateProvider
+    .state('login', {
+      url: "/login",
+      templateUrl: "./src/login/login_template.html"
     })
-    .when('/list', {
-      templateUrl: './src/studentList/studentList_template.html',
-      controller: 'StudentListController'
+    .state('list', {
+      url: "/list",
+      templateUrl: './src/studentList/studentList_template.html'
     })
-    .when('/student/:studentId', {
-      templateUrl: './src/studentPage/studentPage_template.html',
-      controller: 'StudentPageController'
+    .state('student', {
+      url: '/student/:studentId',
+      templateUrl: './src/studentPage/studentPage_template.html'
     })
-    .otherwise({
-      redirectTo: '/login'
-    });
-}]);
+});
+
+
+var PaginationController = function($scope) {
+  $scope.pageChangeHandler = function(num) {
+    console.log('going to page ' + num);
+  };
+}
+
+app.controller('PaginationController', PaginationController);

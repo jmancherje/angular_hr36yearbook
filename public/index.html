@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>HR36 Social Directory</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- libraries -->
   <script src="bower_components/underscore/underscore-min.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
   <!-- app files -->
   <script src="src/app.js"></script>
   <script src="src/studentList/studentList_controller.js"></script>
@@ -17,9 +21,9 @@
 </head>
 <body>
 
-  <div ng-view>
+  <main ui-view>
       
-  </div>
+  </main>
   
 </body>
 </html>

@@ -1,5 +1,5 @@
 angular.module('app.studentPage', [])
 
-.controller('StudentPageController', function($scope) {
-
-});
+.controller('StudentPageController', ['$scope', '$routeParams', function($scope, $routeParams) {
+  $scope.studentId = $routeParams.studentId;
+}]);

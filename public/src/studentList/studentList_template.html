@@ -1,3 +1,18 @@
 <div>
   <h2>students</h2>
+  
+  <ul class="students-list">  
+    <li dir-paginate="student in students | itemsPerPage: pageSize" current-page="currentPage">
+      <img height="75" src="/images/{{student.img_name}}.jpg" alt="image of {{student.name}}">
+      <p>{{student.name}}</p>
+      <p>{{student.location}}</p>
+    </li>
+  </ul>
+
+  <div ng-controller="PaginationController">
+    <small>this is in "PaginationController"</small>
+    <div class="text-center">
+    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="/bower_components/angularUtils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+    </div>
+  </div>
 </div>

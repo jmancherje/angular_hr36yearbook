@@ -4,7 +4,6 @@ Login.controller('LoginController', ['$scope', '$location', function($scope, $lo
   console.log('login controller loaded');
 
   $scope.login = function(event) {
-    // event.preventDefault();
     $location.path('/list');
   }
 
