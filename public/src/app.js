@@ -34,7 +34,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 var PaginationController = function($scope, $location) {
   $scope.pageChangeHandler = function(num) {
     console.log('going to page ' + num);
-    $location.url('/list' + $scope.currentPage);
+    $location.url('/list/' + num);
   };
 }
 

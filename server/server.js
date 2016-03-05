@@ -21,7 +21,6 @@ app.use(bodyParser.json());
 
 
 // DB schemas:
-var kittySchema = require('./models/kitty.js');
 var userSchema = require('./models/users.js');
 var commentsSchema = require('./models/comments.js');
 
