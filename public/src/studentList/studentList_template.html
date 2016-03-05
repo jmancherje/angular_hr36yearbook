@@ -3,7 +3,7 @@
   
   <ul class="students-list">  
     <li dir-paginate="student in students | itemsPerPage: pageSize" current-page="currentPage">
-      <img height="75" src="/images/{{student.img_name}}.jpg" alt="image of {{student.name}}">
+      <img height="75" ng-src="/images/{{student.img_name}}.jpg" alt="image of {{student.name}}">
       <p>{{student.name}}</p>
       <p>{{student.location}}</p>
     </li>

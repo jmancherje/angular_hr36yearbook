@@ -63,9 +63,6 @@ module.exports = function (app, express) {
     });
 
     comment.save();
-    // Comment.find({pageId: req.body.pageId}, function (err, comments) {
-    //   res.send(200, comments);
-    // });
 
     res.sendStatus(200);
     // store user as _ID from session storage

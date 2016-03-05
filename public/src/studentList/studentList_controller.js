@@ -1,6 +1,6 @@
 angular.module('app.studentList', [])
 
-.controller('StudentListController',['$scope', '$http', function($scope, $http) {
+.controller('StudentListController',['$scope', '$http', '$location', function($scope, $http, $location) {
   $scope.currentPage = 1;
   $scope.pageSize = 5;
   $scope.students = [];

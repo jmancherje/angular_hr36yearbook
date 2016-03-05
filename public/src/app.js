@@ -1,5 +1,4 @@
 var app = angular.module('app', [
-  'ngRoute',
   'ui.router',
   'app.login',
   'app.studentList',
@@ -19,6 +18,7 @@ app.config(function($stateProvider, $urlRouterProvider){
       controller: "LoginController"
     })
     .state('list', {
+      // TODO: utilize this :pageNumber
       url: "/list/:pageNumber",
       templateUrl: './src/studentList/studentList_template.html',
       controller: "StudentListController"
@@ -32,9 +32,9 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 
 var PaginationController = function($scope, $location) {
-  $scope.pageChangeHandler = function(num) {
-    console.log('going to page ' + num);
-    $location.url('/list/' + num);
+  $scope.pageChangeHandler = function(newPageNumber) {
+    console.log('going to page ' + newPageNumber);
+    $location.url('/list/' + newPageNumber);
   };
 }
 
